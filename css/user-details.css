@@ -1,0 +1,79 @@
+.user {
+    padding: 10px;
+    background: #d5e4db;
+}
+
+.left, .right {
+    width: 50%;
+    padding: 10px;
+}
+
+.user_name {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.user_info p {
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.user_company {
+    padding: 15px;
+    margin-top: 24px;
+    background: #bccbde;
+}
+
+.user_address {
+    padding: 15px;
+    background: #c2dde6;
+}
+
+.user_company p, .user_address p {
+    margin-bottom: 4px;
+}
+
+.user_address_geo {
+    padding: 10px;
+    margin-top: 15px;
+    background: #caced8;
+}
+
+.view-posts-btn, .hide-posts-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.view-posts-btn {
+    background: #2c2c92;
+}
+
+.hide-posts-btn {
+    display: none;
+    background: #af3838;
+}
+
+.post {
+    flex-direction: column;
+    align-items: center;
+    width: 222px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #c2dde6;
+}
+
+.post_title {
+    text-align: center;
+}
+
+.post_details-btn {
+    padding: 6px 30px;
+    margin-top: 10px;
+    color: #ffffff;
+    background: #000000;
+}

@@ -1,0 +1,36 @@
+.post {
+    padding: 15px;
+    background: #d5e4db;
+}
+
+.post_title {
+    text-align: center;
+}
+
+.post_body {
+    /*margin-bottom: 15px;*/
+    font-size: 20px;
+}
+
+.post_comments {
+    margin-top: 20px;
+}
+
+.comment {
+    width: 272px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #c2dde6;
+}
+
+.comment_name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.comment_email {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}

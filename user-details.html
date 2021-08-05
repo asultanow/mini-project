@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user-details.css">
+</head>
+<body>
+
+<div class="box">
+    <div id="user" class="user d-flex">
+        <h2 id="name" class="user_name"></h2>
+        <div class="left">
+            <div class="user_info">
+                <p id="username"></p>
+                <p id="email"></p>
+                <p id="phone"></p>
+                <p id="website"></p>
+            </div>
+            <div id="company" class="user_company">
+                <h3>Company:</h3>
+                <p id="companyname"></p>
+                <p id="catchphrase"></p>
+                <p id="bs"></p>
+            </div>
+        </div>
+        <div class="right">
+            <div id="address" class="user_address">
+                <h3>Address:</h3>
+                <p id="street"></p>
+                <p id="suite"></p>
+                <p id="city"></p>
+                <p id="zipcode"></p>
+                <div id="geo" class="user_address_geo">
+                    <h4>Geo:</h4>
+                    <p id="lat"></p>
+                    <p id="lng"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="view-posts-btn" class="view-posts-btn">View Posts</button>
+        <button id="hide-posts-btn" class="hide-posts-btn">Hide Posts</button>
+    </div>
+    <div id="posts" class="d-flex"></div>
+</div>
+
+<script src="javascript/user-details.js"></script>
+
+</body>
+</html>
