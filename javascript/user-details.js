@@ -2,8 +2,6 @@ const url = new URL(location.href);
 const userJson = url.searchParams.get('user');
 const user = JSON.parse(userJson);
 
-console.log(user);
-
 document.getElementById('name').innerText = `${user.id}. ${user.name}`;
 document.getElementById('username').innerText = `Username: ${user.username}`;
 document.getElementById('email').innerText = `Email: ${user.email}`;
@@ -19,20 +17,16 @@ document.getElementById('zipcode').innerText = `Zipcode: ${user.address.zipcode}
 document.getElementById('lat').innerText = `Lat: ${user.address.geo.lat}`;
 document.getElementById('lng').innerText = `Lng: ${user.address.geo.lng}`;
 
+const postsDiv = document.getElementById('posts');
 const viewPostsBtn = document.getElementById('view-posts-btn');
 const hidePostsBtn = document.getElementById('hide-posts-btn');
-
-const postsDiv = document.getElementById('posts');
-
-let isPostsExist = false;
+let isFetched = false;
 
 viewPostsBtn.onclick = () => {
-    console.log(isPostsExist);
-
     viewPostsBtn.style.display = 'none';
     hidePostsBtn.style.display = 'block';
 
-    if (isPostsExist) {
+    if (isFetched) {
         postsDiv.style.display = 'flex';
         return;
     }
@@ -50,11 +44,9 @@ function renderPosts() {
     fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
         .then(posts => posts.json())
         .then(posts => {
-            isPostsExist = true;
+            isFetched = true;
 
             for (const post of posts) {
-                const postJson = JSON.stringify(post);
-
                 const postDiv = document.createElement('div');
                 postDiv.classList.add('post', 'd-flex');
 
@@ -62,16 +54,15 @@ function renderPosts() {
                 title.classList.add('post_title');
                 title.innerText = `${post.id}.${post.userId}. ${post.title}`;
 
-                const postDetailsBtn = document.createElement('button');
-                postDetailsBtn.classList.add('post_details-btn');
-                postDetailsBtn.innerText = 'Details';
+                const detailsBtn = document.createElement('button');
+                detailsBtn.classList.add('post_details-btn');
+                detailsBtn.innerText = 'Details';
 
-                postDetailsBtn.onclick = () => {
-                    location.href = `post-details.html?post=${postJson}`;
+                detailsBtn.onclick = () => {
+                    location.href = `post-details.html?post=${JSON.stringify(post)}`;
                 };
 
-                postDiv.append(title, postDetailsBtn);
-
+                postDiv.append(title, detailsBtn);
                 postsDiv.append(postDiv);
             }
         });

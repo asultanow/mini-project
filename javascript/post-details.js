@@ -1,9 +1,6 @@
 const url = new URL(location.href);
-
 const postJson = url.searchParams.get('post');
 const post = JSON.parse(postJson);
-
-console.log(post);
 
 document.getElementById('title').innerText = `${post.id}.${post.userId}. ${post.title}`;
 document.getElementById('body').innerText = post.body.replaceAll('\n', ' ');

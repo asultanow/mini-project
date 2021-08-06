@@ -1,32 +1,25 @@
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(users => users.json())
     .then(users => {
-        console.log(users);
-
         const usersDiv = document.getElementById('users');
 
         for (const user of users) {
-            const userJson = JSON.stringify(user);
-
             const userDiv = document.createElement('div');
             userDiv.classList.add('user');
 
-            const userName = document.createElement('div');
-            userName.classList.add('user_name');
-            userName.innerText = `${user.id}. ${user.name}`;
+            const name = document.createElement('div');
+            name.classList.add('user_name');
+            name.innerText = `${user.id}. ${user.name}`;
 
-            const userDetailsBtn = document.createElement('button');
-            userDetailsBtn.classList.add('user_details-btn');
-            userDetailsBtn.innerText = 'Details';
+            const detailsBtn = document.createElement('button');
+            detailsBtn.classList.add('user_details-btn');
+            detailsBtn.innerText = 'Details';
 
-            userDetailsBtn.onclick = () => {
-                location.href = `user-details.html?user=${userJson}`
+            detailsBtn.onclick = () => {
+                location.href = `user-details.html?user=${JSON.stringify(user)}`
             };
 
-            userDiv.append(userName, userDetailsBtn);
-
+            userDiv.append(name, detailsBtn);
             usersDiv.append(userDiv);
         }
     });
-
-console.log(window.innerWidth);
